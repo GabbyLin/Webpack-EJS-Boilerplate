@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?fguwlm');
+  src:  url('../fonts/icomoon.eot?fguwlm#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?fguwlm') format('truetype'),
+    url('../fonts/icomoon.woff?fguwlm') format('woff'),
+    url('../fonts/icomoon.svg?fguwlm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-down-arrow:before {
+  content: "\e900";
+}
+.icon-up-arrow:before {
+  content: "\e901";
+}
+.icon-backtotop:before {
+  content: "\e903";
+}
+.icon-close-envelope:before {
+  content: "\e904";
+}
+.icon-cross:before {
+  content: "\e905";
+}
+.icon-dot:before {
+  content: "\e906";
+}
+.icon-fb:before {
+  content: "\e907";
+}
+.icon-left-arrow:before {
+  content: "\e909";
+}
+.icon-line:before {
+  content: "\e90a";
+}
+.icon-logo:before {
+  content: "\e90c";
+}
+.icon-logo_s:before {
+  content: "\e90d";
+}
+.icon-piclist:before {
+  content: "\e90f";
+}
+.icon-play:before {
+  content: "\e910";
+}
+.icon-refresh:before {
+  content: "\e911";
+}
+.icon-right-arrow:before {
+  content: "\e912";
+}
+.icon-link:before {
+  content: "\e913";
+}
+.icon-search:before {
+  content: "\e914";
+}
+.icon-twitter:before {
+  content: "\ea96";
+}
+.icon-font_s:before {
+  content: "\e91a";
+}
+.icon-quotes_down1:before {
+  content: "\e91c";
+}
+.icon-quotes_up1:before {
+  content: "\e91d";
+}
+.icon-home31:before {
+  content: "\e91f";
+}
+.icon-spinner1:before {
+  content: "\e97b";
+}
+.icon-spinner61:before {
+  content: "\e981";
+}
+.icon-spinner71:before {
+  content: "\e982";
+}
+.icon-share21:before {
+  content: "\ea83";
+}
