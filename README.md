@@ -1,7 +1,7 @@
 # Webpack-EJS-Boilerplate
 Webpack static boilerplate, with EJS + SCSS
 
-## [DEMO](https://gabbylin.github.io/Webpack-EJS-Boilerplate/dist/index.html)
+### [DEMO](https://gabbylin.github.io/Webpack-EJS-Boilerplate/dist/index.html)
 
 ## Basic Usage
 
