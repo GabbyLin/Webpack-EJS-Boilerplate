@@ -134,7 +134,7 @@ If your project need someting different between development mode and production 
 
 Edit `DefinePlugin` in `webpack.dev.js` and `webpack.prod.js`, you can use different variable in different mode.
 
-More detail about how to use `DefinePlugin` jsut read [official document](https://webpack.js.org/plugins/define-plugin/#root)
+More detail about how to use `DefinePlugin` just read [official document](https://webpack.js.org/plugins/define-plugin/#root)
 
 
 ## Reference
