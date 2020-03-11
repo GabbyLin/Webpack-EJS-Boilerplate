@@ -2,25 +2,19 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-
-module.exports = {
-    devServer: { contentBase: 'dist/', },
+const webpack = require("webpack");
+const pages = require('./pages.json');
+console.log(pages)
+let webpackConfig = {
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './src/index.ejs',
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'page1.html',
-            template: './src/page1.ejs',
-        }),
         new MiniCssExtractPlugin(),
     ],
     module: {
         rules: [
             {
-                test: /\.ejs$/,
-                loader: "ejs-loader?variable=data"
+                test: /test\.js$/,
+                use: 'mocha-loader',
+                exclude: /node_modules/,
             },{
                 test: /\.s[ac]ss$/i,
                 use: [
@@ -29,34 +23,45 @@ module.exports = {
                     'sass-loader',
                 ],
             },{
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: 'img/[name].[ext]',
-                },
+                test: /\.(woff|woff2|svg|eot|ttf)$/,
+                exclude: /node_modules/,
+                use: ['file-loader'],
             },{
-                test: /\.woff(2)?(\?[a-z0-9]+)?$/,
-                loader: "url-loader?limit=10000&mimetype=application/font-woff",
-                options: {
-                    name: 'fonts/[name].[ext]',
-                },
-            },{
-                test: /\.(ttf|eot|svg)(\?[a-z0-9]+)?$/,
-                loader: "file-loader",
-                options: {
-                    name: 'fonts/[name].[ext]',
-                },
+                test: /\.(png|jpg|jpeg|gif)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: 'img/[hash:8].[ext]',
+                        }
+                    }
+                ]
             },{
                 test: /\.ejs$/,
-                loader: 'ejs-html-loader',
-                options: {
-                    title: 'The Ant: An Introduction',
-                    season: 1,
-                    episode: 9,
-                    production: process.env.ENV === 'production'
-                }
-            }
+                exclude: /node_modules/,
+                use: [{
+                    loader: 'ejs-loader'
+                }]
+            },
             
         ],
     },
-};
+
+}
+
+
+pages.forEach(function (page) {
+    webpackConfig.plugins.push(
+        new HtmlWebpackPlugin({
+            pageName: page.name,
+            template: path.resolve(__dirname, 'src/entry.ejs'),
+            filename: path.resolve(__dirname, `dist/${page.name}.html`),
+            pages: pages
+        })
+    );
+});
+
+module.exports = webpackConfig;
+

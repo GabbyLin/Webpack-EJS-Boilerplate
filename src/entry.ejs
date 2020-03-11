@@ -1,0 +1,53 @@
+
+<% 
+let pages = htmlWebpackPlugin.options.pages;
+let page = pages.find(function(page){
+    return page.name == htmlWebpackPlugin.options.pageName;
+});
+
+pages.forEach(function(_page){
+    if(_page.name != _page.channelName && _page.channelName == page.name){
+        page.children || (page.children = []);
+        page.children.push(_page);
+    }
+});
+
+%>
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title><%= page.title %></title>
+    <!--normalize-->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+
+    <!-- common head -->
+    <%= require('./common/_head.ejs')({page: page, pages: pages}) %>
+
+    <!-- page meta -->
+    <meta name="description" content="<%= page.description %>" /> 
+    <meta property="og:description" content="<%= page.description %>"/>
+    <meta name="keywords" content="<%= page.keywords %>"/> 
+    <meta property="og:title" content="<%= page.ogtitle %>"/>
+    <meta property="og:image" content="<%= page.ogimage %>"/>
+    <meta property="og:url" content="<%= page.ogurl %>"/>
+
+    <!-- structured data -->
+    <%= require('./include/'+ page.name +'.ejs')({page: page, pages: pages}) %>
+
+    
+</head>
+<body>
+
+
+<%= require('./common/_header.ejs')({page: page, pages: pages}) %>
+
+<div class="container">
+    <%= require('./tpls/'+ page.name +'.ejs')({page: page, pages: pages}) %>
+</div>
+
+<%= require('./common/_footer.ejs')({page: page, pages: pages}) %>
+
+</body>
+</html>
+

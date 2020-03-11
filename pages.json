@@ -1,0 +1,23 @@
+[
+    {
+        "name": "index", 
+        "channelName": "index", 
+        "isRoot": true, 
+        "title": "index",
+        "description":"description",
+        "keywords":"keywords",
+        "ogtitle":"og:title",
+        "ogimage":"og:image",
+        "ogurl":"og:url"
+    },{
+        "name": "page2", 
+        "channelName": "page2", 
+        "isRoot": true, 
+        "title": "page2",
+        "description":"page2 description",
+        "keywords":"page2 keywords",
+        "ogtitle":"page2 og:title",
+        "ogimage":"page2 og:image",
+        "ogurl":"page2 og:url"
+    }
+]

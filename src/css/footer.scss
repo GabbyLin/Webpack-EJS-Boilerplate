@@ -1,0 +1,31 @@
+footer {
+    background-color: #EEF0F3;
+    color: #465A62;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;;
+    @media screen and (max-width: 767px){
+        padding: 18px 0;
+    }
+}
+
+.gotop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 24px;
+    line-height: 40px;
+    border-radius: 100%;
+    text-align: center;
+
+    background-color: #697A94;
+    color: #ffffff;
+    &:link { color: #ffffff;}
+    &:active { color: #ffffff; }
+    &:visited { color: #ffffff; }
+    &:hover { color: #ffffff;}
+}
