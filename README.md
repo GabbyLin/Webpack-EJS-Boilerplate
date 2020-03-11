@@ -126,7 +126,7 @@ If you don't need firebase, just delete it.
 
 In the `webpack.dev.js`, you fill `target` with domain and you can use API.
 
-But the `localhost` will display in **unsafe browsing site status**, it won't bring any problem when using API.
+But the `localhost` will display in **unsafe browsing site status**, it won't cause any problem when using API.
 
 ## DefinePlugin
 
