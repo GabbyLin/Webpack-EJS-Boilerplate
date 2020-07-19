@@ -46,7 +46,7 @@
     "firebase": "^7.9.3",
     "html-loader": "^0.5.5",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "normalize.css": "^8.0.1",
     "npm": "^6.14.6",
     "paginationjs": "^2.1.5",
